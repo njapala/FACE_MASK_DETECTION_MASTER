@@ -32,7 +32,7 @@ Follow these instructions to use this project on your system:
 1. Type the following command into your Command Prompt to clone this repository onto your computer:
 
 ```
-git clone https://github.com/Karan-Malik/FaceMaskDetector.git
+git clone https://github.com/njapala/FACE_MASK_DETECTION_MASTER
 ```
 followed by:
 
