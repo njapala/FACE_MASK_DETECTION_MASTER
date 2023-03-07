@@ -16,7 +16,7 @@ To do this task, the video frames from the webcam are preprocessed before being 
 
 ### No Mask
 
-![image](output_No Mask.jpg)
+![image](output_NoMask.jpg)
 
 
 

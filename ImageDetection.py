@@ -13,7 +13,7 @@ import matplotlib.pyplot as plt
 #To test for individual images
 
 mymodel=load_model('mymodel.h5')
-img_path = 'C://Nithish Japala//AI//Project//FaceMaskDetector-master//WIN_20230303_13_57_22_Pro.jpg'
+img_path = 'C://Nithish Japala//AI//Project//FaceMaskDetector-master//WIN_20230303_13_55_42_Pro.jpg'
 test_image = image.load_img(img_path, target_size=(150, 150))
 test_image
 test_image=image.img_to_array(test_image)
@@ -22,7 +22,7 @@ output = mymodel.predict(test_image)[0][0]
 
 # Classify the output
 if output == 1:
-    result = 'No Mask'
+    result = 'NoMask'
 else:
     result = 'Mask'
 
@@ -37,7 +37,7 @@ faces = face_cascade.detectMultiScale(gray, scaleFactor=1.1, minNeighbors=5)
 # For each detected face, draw a bounding box and label it with the classification result
 for (x, y, w, h) in faces:
     # Draw bounding box
-    if result == 'No Mask':
+    if result == 'NoMask':
         color = (0, 0, 255) # Red color for no mask
     else:
         color = (0, 255, 0) # Green color for mask
