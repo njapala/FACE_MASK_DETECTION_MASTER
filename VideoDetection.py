@@ -15,15 +15,23 @@ import matplotlib.pyplot as plt
 # Building model to classify between mask and no mask:
 #Initializing a sequential model.
 seqModel=Sequential()
-
+# Adds a 2D convolutional layer with 32 filters, each of size 3x3, and a ReLU activation function. 
 seqModel.add(Conv2D(32,(3,3),activation='relu',input_shape=(150,150,3)))
+#Adds a max pooling layer with a default pool size of 2x2. This layer reduces the dimensionality of the previous convolutional layer's output, making the model more efficient.
 seqModel.add(MaxPooling2D() )
+#: Adds another 2D convolutional layer with the same specifications as the first.
 seqModel.add(Conv2D(32,(3,3),activation='relu'))
+#Adds another max pooling layer.
 seqModel.add(MaxPooling2D() )
+# Adds another 2D convolutional layer with the same specifications as the previous two.
 seqModel.add(Conv2D(32,(3,3),activation='relu'))
+#Adds another max pooling layer.
 seqModel.add(MaxPooling2D() )
+#Flattens the output from the previous layer into a 1D array, which can then be fed into a fully connected neural network layer.
 seqModel.add(Flatten())
+#Adds a fully connected neural network layer with 100 neurons and a ReLU activation function.
 seqModel.add(Dense(100,activation='relu'))
+# Adds another fully connected neural network layer with 1 neuron and a sigmoid activation function. This is the output layer of the model and predicts a binary output (0 or 1).
 seqModel.add(Dense(1,activation='sigmoid'))
 
 seqModel.compile(optimizer='adam',loss='binary_crossentropy',metrics=['accuracy'])
